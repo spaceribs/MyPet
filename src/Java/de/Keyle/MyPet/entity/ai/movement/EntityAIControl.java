@@ -23,8 +23,8 @@ import de.Keyle.MyPet.MyPetPlugin;
 import de.Keyle.MyPet.entity.types.MyPet;
 import de.Keyle.MyPet.skill.skills.Control;
 import de.Keyle.MyPet.util.Scheduler;
-import net.minecraft.server.v1_4_R1.Navigation;
-import net.minecraft.server.v1_4_R1.PathfinderGoal;
+import net.minecraft.server.v1_4_6.Navigation;
+import net.minecraft.server.v1_4_6.PathfinderGoal;
 import org.bukkit.Location;
 
 public class EntityAIControl extends PathfinderGoal implements Scheduler

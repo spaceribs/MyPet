@@ -24,12 +24,12 @@ import de.Keyle.MyPet.entity.types.MyPet;
 import de.Keyle.MyPet.skill.skills.Behavior;
 import de.Keyle.MyPet.skill.skills.Behavior.BehaviorState;
 import de.Keyle.MyPet.util.MyPetPvP;
-import net.minecraft.server.v1_4_R1.EntityLiving;
-import net.minecraft.server.v1_4_R1.EntityPlayer;
-import net.minecraft.server.v1_4_R1.EntityTameableAnimal;
-import net.minecraft.server.v1_4_R1.PathfinderGoal;
+import net.minecraft.server.v1_4_6.EntityLiving;
+import net.minecraft.server.v1_4_6.EntityPlayer;
+import net.minecraft.server.v1_4_6.EntityTameableAnimal;
+import net.minecraft.server.v1_4_6.PathfinderGoal;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_4_6.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class EntityAIAggressiveTarget extends PathfinderGoal
@@ -58,7 +58,7 @@ public class EntityAIAggressiveTarget extends PathfinderGoal
             Behavior behavior = (Behavior) myPet.getSkills().getSkill("Behavior");
             if (behavior.getBehavior() == BehaviorState.Aggressive && myPet.getCraftPet().canMove())
             {
-                if (petEntity.getGoalTarget() == null || !petEntity.getGoalTarget().isAlive())
+                if (petEntity.aG() == null || !petEntity.aG().isAlive())
                 {
                     for (float range = 1.F ; range <= this.range ; range++)
                     {
@@ -125,11 +125,11 @@ public class EntityAIAggressiveTarget extends PathfinderGoal
         {
             return false;
         }
-        else if (petEntity.getGoalTarget() == null)
+        else if (petEntity.aG() == null)
         {
             return false;
         }
-        else if (!petEntity.getGoalTarget().isAlive())
+        else if (!petEntity.aG().isAlive())
         {
             return false;
         }
@@ -138,11 +138,11 @@ public class EntityAIAggressiveTarget extends PathfinderGoal
 
     public void c()
     {
-        petEntity.setGoalTarget(this.target);
+        petEntity.b(this.target);
     }
 
     public void d()
     {
-        petEntity.setGoalTarget((EntityLiving) null);
+        petEntity.b((EntityLiving) null);
     }
 }

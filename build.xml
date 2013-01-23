@@ -22,7 +22,6 @@
 <project name="MyPet" default="Main" basedir=".">
 
     <!-- Setting custom vars (only used when properties not set in IDE) -->
-
     <!--
     <property name="idea.lib.dir" location="" />
     <property name="MyPet.lib.dir" location="" />
@@ -31,10 +30,10 @@
     -->
 
     <!-- Setting some vars -->
-    <property name="MyPet.bukkit.version" value="0.1" />
+    <property name="MyPet.bukkit.version" value="0.3" />
     <property name="MyPet.craftbukkit.download" value="http://dl.bukkit.org/downloads/craftbukkit/get/01774_1.4.6-R0.3/craftbukkit-beta.jar" />
-    <property name="MyPet.minecraft.version" value="1.4.7" />
-    <property name="MyPet.minecraft.version.package" value="1_4_R1" />
+    <property name="MyPet.minecraft.version" value="1.4.6" />
+    <property name="MyPet.minecraft.version.package" value="1_4_6" />
     <property name="MyPet.mypet.version" value="1.0.5" />
 
     <property name="MyPet.src.dir" location="${basedir}/src/Java" />
@@ -47,6 +46,8 @@
     <!-- Adding classpathes -->
     <path id="MyPet.manifest.classpath">
         <pathelement location="craftbukkit-${MyPet.minecraft.version}-R${MyPet.bukkit.version}.jar" />
+        <pathelement location="bukkit-1.4.6-R0.2.jar" />
+        <pathelement location="bukkit-1.4.6-R0.1.jar" />
         <pathelement location="craftbukkit.jar" />
     </path>
 

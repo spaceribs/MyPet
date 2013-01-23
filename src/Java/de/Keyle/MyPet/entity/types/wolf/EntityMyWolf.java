@@ -24,7 +24,7 @@ import de.Keyle.MyPet.entity.ai.movement.*;
 import de.Keyle.MyPet.entity.ai.target.*;
 import de.Keyle.MyPet.entity.types.EntityMyPet;
 import de.Keyle.MyPet.entity.types.MyPet;
-import net.minecraft.server.v1_4_R1.*;
+import net.minecraft.server.v1_4_6.*;
 import org.bukkit.DyeColor;
 
 @EntitySize(width = 0.6F, height = 0.8F)
@@ -207,7 +207,7 @@ public class EntityMyWolf extends EntityMyPet
 
         if (itemStack != null)
         {
-            if (itemStack.id == 351 && itemStack.getData() != ((MyWolf) myPet).getCollarColor().getDyeData())
+            if (itemStack.id == 351 && itemStack.getData() != ((MyWolf) myPet).getCollarColor().getData())
             {
                 if (itemStack.getData() <= 15)
                 {

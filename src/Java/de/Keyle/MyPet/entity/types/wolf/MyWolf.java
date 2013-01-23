@@ -23,7 +23,7 @@ import de.Keyle.MyPet.entity.MyPetInfo;
 import de.Keyle.MyPet.entity.types.MyPet;
 import de.Keyle.MyPet.entity.types.MyPetType;
 import de.Keyle.MyPet.util.MyPetPlayer;
-import net.minecraft.server.v1_4_R1.NBTTagCompound;
+import net.minecraft.server.v1_4_6.NBTTagCompound;
 import org.bukkit.DyeColor;
 
 import static de.Keyle.MyPet.entity.types.MyPet.LeashFlag.Tamed;
@@ -123,7 +123,7 @@ public class MyWolf extends MyPet
         info.setBoolean("Baby", isBaby());
         info.setBoolean("Tamed", isTamed());
         info.setBoolean("Angry", isAngry());
-        info.setByte("CollarColor", getCollarColor().getDyeData());
+        info.setByte("CollarColor", getCollarColor().getData());
         return info;
     }
 
@@ -136,7 +136,7 @@ public class MyWolf extends MyPet
         }
         if (info.hasKey("CollarColor"))
         {
-            setCollarColor(DyeColor.getByDyeData(info.getByte("CollarColor")));
+            setCollarColor(DyeColor.getByData(info.getByte("CollarColor")));
         }
         if (info.hasKey("Tamed"))
         {

@@ -34,11 +34,11 @@ import de.Keyle.MyPet.skill.MyPetExperience;
 import de.Keyle.MyPet.skill.skills.*;
 import de.Keyle.MyPet.skill.skills.Wither;
 import de.Keyle.MyPet.util.*;
-import net.minecraft.server.v1_4_R1.NBTTagCompound;
+import net.minecraft.server.v1_4_6.NBTTagCompound;
 import org.bukkit.ChatColor;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftEnderman;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftSkeleton;
+import org.bukkit.craftbukkit.v1_4_6.entity.CraftEnderman;
+import org.bukkit.craftbukkit.v1_4_6.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_4_6.entity.CraftSkeleton;
 import org.bukkit.entity.*;
 import org.bukkit.entity.Skeleton.SkeletonType;
 import org.bukkit.event.EventHandler;
@@ -277,11 +277,11 @@ public class MyPetEntityListener implements Listener
                             {
                                 extendedInfo.setBoolean("Sitting", ((Wolf) leashTarget).isSitting());
                                 extendedInfo.setBoolean("Tamed", ((Wolf) leashTarget).isTamed());
-                                extendedInfo.setByte("CollarColor", ((Wolf) leashTarget).getCollarColor().getDyeData());
+                                extendedInfo.setByte("CollarColor", ((Wolf) leashTarget).getCollarColor().getData());
                             }
                             else if (leashTarget instanceof Sheep)
                             {
-                                extendedInfo.setInt("Color", ((Sheep) leashTarget).getColor().getDyeData());
+                                extendedInfo.setInt("Color", ((Sheep) leashTarget).getColor().getData());
                                 extendedInfo.setBoolean("Sheared", ((Sheep) leashTarget).isSheared());
                             }
                             else if (leashTarget instanceof Villager)

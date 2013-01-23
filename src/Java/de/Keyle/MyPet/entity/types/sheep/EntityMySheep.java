@@ -24,7 +24,7 @@ import de.Keyle.MyPet.entity.ai.movement.*;
 import de.Keyle.MyPet.entity.ai.target.*;
 import de.Keyle.MyPet.entity.types.EntityMyPet;
 import de.Keyle.MyPet.entity.types.MyPet;
-import net.minecraft.server.v1_4_R1.*;
+import net.minecraft.server.v1_4_6.*;
 import org.bukkit.DyeColor;
 
 @EntitySize(width = 0.9F, height = 1.3F)
@@ -64,7 +64,7 @@ public class EntityMySheep extends EntityMyPet
         {
             super.setMyPet(myPet);
 
-            this.setColor(((MySheep) myPet).getColor().getDyeData());
+            this.setColor(((MySheep) myPet).getColor().getData());
             this.setSheared(((MySheep) myPet).isSheared());
             this.setBaby(((MySheep) myPet).isBaby());
         }
@@ -79,7 +79,7 @@ public class EntityMySheep extends EntityMyPet
     {
         byte b0 = this.datawatcher.getByte(16);
         this.datawatcher.watch(16, (byte) (b0 & 240 | color & 15));
-        ((MySheep) myPet).color = DyeColor.getByDyeData(color);
+        ((MySheep) myPet).color = DyeColor.getByData(color);
     }
 
     public boolean isSheared()
@@ -147,7 +147,7 @@ public class EntityMySheep extends EntityMyPet
 
         if (entityhuman == getOwner() && itemStack != null)
         {
-            if (itemStack.id == 351 && itemStack.getData() != ((MySheep) myPet).getColor().getDyeData())
+            if (itemStack.id == 351 && itemStack.getData() != ((MySheep) myPet).getColor().getData())
             {
                 if (itemStack.getData() <= 15)
                 {
@@ -171,7 +171,7 @@ public class EntityMySheep extends EntityMyPet
 
                     for (int j = 0 ; j < i ; ++j)
                     {
-                        EntityItem entityitem = this.a(new ItemStack(Block.WOOL.id, 1, ((MySheep) myPet).getColor().getDyeData()), 1.0F);
+                        EntityItem entityitem = this.a(new ItemStack(Block.WOOL.id, 1, ((MySheep) myPet).getColor().getData()), 1.0F);
 
                         entityitem.motY += (double) (this.random.nextFloat() * 0.05F);
                         entityitem.motX += (double) ((this.random.nextFloat() - this.random.nextFloat()) * 0.1F);

@@ -23,8 +23,8 @@ import de.Keyle.MyPet.entity.types.EntityMyPet;
 import de.Keyle.MyPet.entity.types.MyPet;
 import de.Keyle.MyPet.skill.skills.Behavior;
 import de.Keyle.MyPet.skill.skills.Behavior.BehaviorState;
-import net.minecraft.server.v1_4_R1.*;
-import org.bukkit.craftbukkit.v1_4_R1.entity.CraftPlayer;
+import net.minecraft.server.v1_4_6.*;
+import org.bukkit.craftbukkit.v1_4_6.entity.CraftPlayer;
 
 public class EntityAIFarmTarget extends PathfinderGoal
 {
@@ -78,7 +78,7 @@ public class EntityAIFarmTarget extends PathfinderGoal
 
     public boolean b()
     {
-        EntityLiving entityliving = petEntity.getGoalTarget();
+        EntityLiving entityliving = petEntity.aG();
 
         if (!petEntity.canMove())
         {
@@ -97,11 +97,11 @@ public class EntityAIFarmTarget extends PathfinderGoal
 
     public void c()
     {
-        petEntity.setGoalTarget(this.target);
+        petEntity.b(this.target);
     }
 
     public void d()
     {
-        petEntity.setGoalTarget(null);
+        petEntity.b((EntityLiving) null);
     }
 }

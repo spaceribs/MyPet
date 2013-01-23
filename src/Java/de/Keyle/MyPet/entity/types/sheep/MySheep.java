@@ -23,7 +23,7 @@ import de.Keyle.MyPet.entity.MyPetInfo;
 import de.Keyle.MyPet.entity.types.MyPet;
 import de.Keyle.MyPet.entity.types.MyPetType;
 import de.Keyle.MyPet.util.MyPetPlayer;
-import net.minecraft.server.v1_4_R1.NBTTagCompound;
+import net.minecraft.server.v1_4_6.NBTTagCompound;
 import org.bukkit.DyeColor;
 
 import static org.bukkit.Material.WHEAT;
@@ -45,7 +45,7 @@ public class MySheep extends MyPet
     {
         if (status == PetState.Here)
         {
-            ((EntityMySheep) getCraftPet().getHandle()).setColor(color.getDyeData());
+            ((EntityMySheep) getCraftPet().getHandle()).setColor(color.getData());
         }
         this.color = color;
     }
@@ -87,7 +87,7 @@ public class MySheep extends MyPet
     public NBTTagCompound getExtendedInfo()
     {
         NBTTagCompound info = new NBTTagCompound("Info");
-        info.setInt("Color", getColor().getDyeData());
+        info.setInt("Color", getColor().getData());
         info.setBoolean("Sheared", isSheared());
         info.setBoolean("Baby", isBaby());
         return info;
@@ -96,7 +96,7 @@ public class MySheep extends MyPet
     @Override
     public void setExtendedInfo(NBTTagCompound info)
     {
-        setColor(DyeColor.getByDyeData((byte) info.getInt("Color")));
+        setColor(DyeColor.getByData((byte) info.getInt("Color")));
         setSheared(info.getBoolean("Sheared"));
         setBaby(info.getBoolean("Baby"));
     }
